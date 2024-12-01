@@ -2,7 +2,6 @@ using Moq;
 using System.Data;
 using EnsekTakeHome.Controllers;
 using Microsoft.AspNetCore.Http;
-using Xunit;
 using System.Data.SQLite;
 using EnsekTakeHome.Repositories.Accounts;
 
@@ -45,9 +44,9 @@ namespace EnsekTakeHome.Test
             var results = accountsRepo.HandleCsv(csvData);
 
             //Assert.IsNotNull(results);
-            Assert.True(results.valid.Equals(1));
-            Assert.True(results.invalid.Equals(0));
-            Assert.True(_sqlHelper.GetAllAccounts(_connection, "TestTable").Count == 1);
+            Assert.That(results.valid.Equals(1));
+            Assert.That(results.invalid.Equals(0));
+            Assert.That(_sqlHelper.GetAllAccounts(_connection, "MeterReadings").Count == 1);
         }
 
         [Test]
@@ -68,9 +67,9 @@ namespace EnsekTakeHome.Test
             var results = accountsRepo.HandleCsv(csvData);
 
             //Assert.IsNotNull(results);
-            Assert.True(results.valid.Equals(0));
-            Assert.True(results.invalid.Equals(1));
-            Assert.True(_sqlHelper.GetAllAccounts(_connection, "TestTable").Count == 1);
+            Assert.That(results.valid.Equals(0));
+            Assert.That(results.invalid.Equals(1));
+            Assert.That(_sqlHelper.GetAllAccounts(_connection, "MeterReadings").Count == 0);
         }
 
         [Test]
@@ -88,8 +87,8 @@ namespace EnsekTakeHome.Test
                 new AccountsCsvData
                 {
                     AccountId = 2344,
-                    MeterReadingDateTime = new DateTime(2019, 04, 22, 09, 24, 00),
-                    MeterReadValue = 1002
+                    MeterReadingDateTime = new DateTime(2019, 03, 22, 09, 24, 00),
+                    MeterReadValue = 1002222
                 },
             };
 
@@ -97,9 +96,9 @@ namespace EnsekTakeHome.Test
             var results = accountsRepo.HandleCsv(csvData);
 
             //Assert.IsNotNull(results);
-            Assert.True(results.valid.Equals(1));
-            Assert.True(results.invalid.Equals(0));
-            Assert.True(_sqlHelper.GetAllAccounts(_connection, "TestTable").Count == 1);
+            Assert.That(results.valid.Equals(1));
+            Assert.That(results.invalid.Equals(1));
+            Assert.That(_sqlHelper.GetAllAccounts(_connection, "MeterReadings").Count == 1);
         }
 
         [TearDown]

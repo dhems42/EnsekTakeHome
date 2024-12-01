@@ -11,12 +11,10 @@
 using System;
 using System.Reflection;
 
-[assembly: Xunit.TestFramework("Xunit.DependencyInjection.DependencyInjectionTestFramework", "Xunit.DependencyInjection")]
-[assembly: Xunit.DependencyInjection.StartupType("EnsekTakeHome.Test.Startup")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("EnsekTakeHome.Test")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6ee95a324c95cf41c68f86f2c0d5a1c978b42aac")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3a100c283ceff011c0cdff16ed5aff4588226385")]
 [assembly: System.Reflection.AssemblyProductAttribute("EnsekTakeHome.Test")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EnsekTakeHome.Test")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
