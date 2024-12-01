@@ -4,13 +4,13 @@ using System.Data.SQLite;
 
 namespace EnsekTakeHome
 {
-    public class SqlHelper
+    public class SqlHelper : ISqlHelper
     {
         // SQL helper methods
         public bool Insert(SQLiteConnection connection, string table, CsvData values)
         {
             using (var cmd = new SQLiteCommand(
-                $"INSERT INTO {table} HEADERS (AccountID,MeterReadingDateTime,MeterReadValue) VALUES ({values.AccountID},{values.MeterReadingDateTime},{values.MeterReadValue})",
+                $"INSERT INTO {table} HEADERS (AccountId,MeterReadingDateTime,MeterReadValue) VALUES ({values.AccountId},{values.MeterReadingDateTime},{values.MeterReadValue})",
                 connection))
             {
                 var rows = cmd.ExecuteNonQuery();
@@ -22,7 +22,7 @@ namespace EnsekTakeHome
         public bool Update(SQLiteConnection connection, string table, CsvData values, string whereClause)
         {
             using (var cmd = new SQLiteCommand(
-                $"UPDATE {table} VALUES ({values.AccountID},{values.MeterReadingDateTime},{values.MeterReadValue}) WHERE {whereClause}",
+                $"UPDATE {table} VALUES ({values.AccountId},{values.MeterReadingDateTime},{values.MeterReadValue}) WHERE {whereClause}",
                 connection))
             {
                 var rows = cmd.ExecuteNonQuery();
@@ -62,7 +62,7 @@ namespace EnsekTakeHome
         public DateTime GetLatestDateOnAccount(SQLiteConnection connection, string table, CsvData csvData)
         {
             using (var cmd = new SQLiteCommand(
-                $"SELECT * WHERE AccountID == {csvData.AccountID}",
+                $"SELECT * WHERE AccountId == {csvData.AccountId}",
                 connection))
             {
                 using (var reader = cmd.ExecuteReader())

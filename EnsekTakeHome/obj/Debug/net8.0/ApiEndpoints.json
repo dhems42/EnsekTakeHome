@@ -2,18 +2,17 @@
   {
     "ContainingType": "EnsekTakeHome.Controllers.CsvIngestionController",
     "Method": "UploadCsvFile",
-    "RelativePath": "api/CsvIngestion",
+    "RelativePath": "api/meter-reading-uploads",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "csvData",
-        "Type": "System.String",
-        "IsRequired": true
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
       }
     ],
-    "ReturnTypes": [],
-    "EndpointName": "CsvIngestion"
+    "ReturnTypes": []
   }
 ]

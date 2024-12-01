@@ -1,8 +1,11 @@
-﻿namespace EnsekTakeHome
+﻿using CsvHelper.Configuration.Attributes;
+
+namespace EnsekTakeHome
 {
     public class CsvData
     {
-        public int AccountID { get; set; }
+        public int AccountId { get; set; }
+        [Format("dd/MM/yyyy HH:mm")]
         public DateTime MeterReadingDateTime { get; set; }
         public int MeterReadValue { get; set; }
     }

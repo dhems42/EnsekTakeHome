@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EnsekTakeHome")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+99f3d901aeee5fe31c5272363cbce4496bbac2eb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+90ce02a37c4f1c074ac5d90eeb064476c60c1a3f")]
 [assembly: System.Reflection.AssemblyProductAttribute("EnsekTakeHome")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EnsekTakeHome")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

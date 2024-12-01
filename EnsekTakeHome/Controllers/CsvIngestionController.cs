@@ -4,11 +4,12 @@ using System.Data;
 using System.Data.Common;
 using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Data.SQLite;
+using System.Net.Http;
 
 namespace EnsekTakeHome.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/")]
     public class CsvIngestionController : ControllerBase
     {
         private readonly IDbConnection _connection;
@@ -20,16 +21,23 @@ namespace EnsekTakeHome.Controllers
             _connection = connection;
         }
 
-        [HttpPost(Name = "CsvIngestion")]
-        public IActionResult UploadCsvFile([FromBody] string csvData)
+        [HttpPost]
+        [Route("meter-reading-uploads")]
+        public IActionResult UploadCsvFile(IFormFile file)
         {
+            var stream = file.OpenReadStream();
+            if (file == null || file.Length == 0)
+            {
+                throw new Exception("Bad file uploaded.");
+            }
+
             var sqlDB = new SqlHelper();
             int validReadings = 0;
             int invalidReadings = 0;
             List<CsvData> validData = new List<CsvData>();
 
             // This will read the CSV file
-            List<CsvData> csvRowsRead = CsvValidator.ReadCsv(csvData);
+            List<CsvData> csvRowsRead = CsvValidator.ReadCsv(stream);
 
             // Remove duplicates
             List<CsvData> csvRows = csvRowsRead.Distinct().ToList();
@@ -55,7 +63,7 @@ namespace EnsekTakeHome.Controllers
             {
                 // Upload to DB
                 // Check if the account exists
-                if (accounts.Any(x => x.Equals(validDataRow.AccountID)))
+                if (accounts.Any(x => x.Equals(validDataRow.AccountId)))
                 {
                     // This account exists and needs updating
 
