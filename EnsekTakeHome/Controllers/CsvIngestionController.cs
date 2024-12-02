@@ -38,8 +38,14 @@ namespace EnsekTakeHome.Controllers
             // This will read the CSV file
             
             var readings = _accountsRepository.HandleCsv(stream);
+
+            var response = new
+            {
+                message = "OK",
+                data = $"Csv file processed. {readings.valid} Valid meter reading(s). {readings.invalid} Invalid meter reading(s)."
+            };
             
-            return Ok($"Csv file processed. {readings.valid} Valid meter reading(s). {readings.invalid} Invalid meter reading(s).");
+            return Ok(response);
         }
     }
 }

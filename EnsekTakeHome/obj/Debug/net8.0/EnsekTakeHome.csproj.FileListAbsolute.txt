@@ -89,3 +89,9 @@ C:\Users\dhems\source\repos\EnsekTakeHome\EnsekTakeHome\bin\Debug\net8.0\nunit.f
 C:\Users\dhems\source\repos\EnsekTakeHome\EnsekTakeHome\bin\Debug\net8.0\System.Net.Http.Formatting.dll
 C:\Users\dhems\source\repos\EnsekTakeHome\EnsekTakeHome\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\dhems\source\repos\EnsekTakeHome\EnsekTakeHome\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+C:\Users\dhems\source\repos\EnsekTakeHome\EnsekTakeHome\bin\Debug\net8.0\package-lock.json
+C:\Users\dhems\source\repos\EnsekTakeHome\EnsekTakeHome\bin\Debug\net8.0\package.json
+C:\Users\dhems\source\repos\EnsekTakeHome\EnsekTakeHome\bin\Debug\net8.0\tsconfig.app.json
+C:\Users\dhems\source\repos\EnsekTakeHome\EnsekTakeHome\bin\Debug\net8.0\tsconfig.json
+C:\Users\dhems\source\repos\EnsekTakeHome\EnsekTakeHome\bin\Debug\net8.0\tsconfig.node.json
+C:\Users\dhems\source\repos\EnsekTakeHome\EnsekTakeHome\obj\Debug\net8.0\EnsekTakeHome.sourcelink.json
